@@ -79,7 +79,7 @@ watch(
         </div>
         <div class="p-4">
           <NButton v-show="false" block @click="show = true">
-            Prompt Store
+            Prompt Store1
           </NButton>
         </div>
       </main>
