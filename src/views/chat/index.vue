@@ -476,13 +476,13 @@ onUnmounted(() => {
       >
         <div
           id="image-wrapper"
-          class="w-full max-w-screen-xl m-auto dark:bg-[#101014]"
+          class="w-full max-w-screen-xl m-auto bg-gray-100 dark:bg-gray-800"
           :class="[isMobile ? 'p-2' : 'p-4']"
         >
           <template v-if="!dataSources.length">
-            <div class="flex items-center justify-center mt-4 text-center text-neutral-300">
+            <div class="flex items-center justify-center mt-4 text-center text-gray-500 dark:text-gray-400">
               <SvgIcon icon="ri:bubble-chart-fill" class="mr-2 text-3xl" />
-              <span>Aha~</span>
+              <span>Let's talk~</span>
             </div>
           </template>
           <template v-else>
@@ -515,17 +515,17 @@ onUnmounted(() => {
       <div class="w-full max-w-screen-xl m-auto">
         <div class="flex items-center justify-between space-x-2">
           <HoverButton @click="handleClear">
-            <span class="text-xl text-[#4f555e] dark:text-white">
+            <span class="text-xl text-gray-500 dark:text-gray-400">
               <SvgIcon icon="ri:delete-bin-line" />
             </span>
           </HoverButton>
           <HoverButton v-if="!isMobile" @click="handleExport">
-            <span class="text-xl text-[#4f555e] dark:text-white">
+            <span class="text-xl text-gray-500 dark:text-gray-400">
               <SvgIcon icon="ri:download-2-line" />
             </span>
           </HoverButton>
           <HoverButton v-if="!isMobile" @click="toggleUsingContext">
-            <span class="text-xl" :class="{ 'text-[#4b9e5f]': usingContext, 'text-[#a8071a]': !usingContext }">
+            <span class="text-xl" :class="{ 'text-green-500': usingContext, 'text-red-500': !usingContext }">
               <SvgIcon icon="ri:chat-history-line" />
             </span>
           </HoverButton>
