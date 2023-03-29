@@ -28,7 +28,7 @@ export default {
     unauthorizedTips: '未经授权，请先进行验证。',
   },
   chat: {
-    placeholder: '来说点什么吧...（Shift + Enter = 换行）',
+    placeholder: 'Shift + Enter = 换行',
     placeholderMobile: '来说点什么...',
     copy: '复制',
     copied: '复制成功',
@@ -81,5 +81,9 @@ export default {
     importRepeatContent: '内容重复跳过：{msg}',
     onlineImportWarning: '注意：请检查 JSON 文件来源！',
     downloadError: '请检查网络状态与 JSON 文件有效性',
+  },
+  prompt: {
+    yingwen: '翻译',
+    jiucuo: '纠错',
   },
 }

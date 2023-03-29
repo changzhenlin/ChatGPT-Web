@@ -1,10 +1,12 @@
 <script setup lang='ts'>
 import { defineAsyncComponent, ref } from 'vue'
-import { HoverButton, SvgIcon, UserAvatar } from '@/components/common'
+import { HoverButton, UserAvatar } from '@/components/common'
 
 const Setting = defineAsyncComponent(() => import('@/components/common/Setting/index.vue'))
+const Prompt = defineAsyncComponent(() => import('@/components/common/Prompt/index.vue'))
 
 const show = ref(false)
+const shows = ref(false)
 </script>
 
 <template>
@@ -13,12 +15,13 @@ const show = ref(false)
       <UserAvatar />
     </div>
 
-    <HoverButton v-show="false" @click="show = true">
+    <HoverButton @click="shows = true">
       <span class="text-xl text-[#4f555e] dark:text-white">
-        <SvgIcon icon="ri:settings-4-line" />
+        Pro
       </span>
     </HoverButton>
 
     <Setting v-if="show" v-model:visible="show" />
+    <Prompt v-if="shows" v-model:visible="shows" />
   </footer>
 </template>
