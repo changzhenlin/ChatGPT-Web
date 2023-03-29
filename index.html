@@ -13,6 +13,58 @@
 <body class="dark:bg-black">
 	<div id="app">
 		<style>
+			.loader-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+}
+
+.outer-circle, .middle-circle, .inner-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.outer-circle {
+  border: 8px solid #E1BEE7;
+  width: 140px;
+  height: 140px;
+  animation: outer-spin 2s linear infinite;
+}
+
+.middle-circle {
+  border: 8px solid #BA68C8;
+  width: 120px;
+  height: 120px;
+  animation: middle-spin 2s linear infinite;
+}
+
+.inner-circle {
+  border: 8px solid #9C27B0;
+  width: 100px;
+  height: 100px;
+  animation: inner-spin 2s linear infinite;
+}
+
+@keyframes outer-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes middle-spin {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes inner-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 			.loading-wrap {
 				display: flex;
 				justify-content: center;
@@ -69,7 +121,7 @@
 				}
 			}
 		</style>
-		<div class="loading-wrap">
+		<!-- <div class="loading-wrap">
 			<div class="balls">
 				<div></div>
 				<div></div>
@@ -77,6 +129,11 @@
 				<div></div>
 				<div></div>
 			</div>
+		</div> -->
+		<div class="loader-container">
+			<div class="outer-circle"></div>
+			<div class="middle-circle"></div>
+			<div class="inner-circle"></div>
 		</div>
 	</div>
 	<script type="module" src="/src/main.ts"></script>
