@@ -477,9 +477,15 @@ onUnmounted(() => {
         <div
           id="image-wrapper"
           class="w-full max-w-screen-xl m-auto bg-gray-100 dark:bg-gray-800"
-          :class="[isMobile ? 'p-2' : 'p-0']"
+          :class="[isMobile ? 'p-2' : 'p-4']"
         >
-          <template>
+          <template v-if="!dataSources.length">
+            <div class="flex items-center justify-center mt-4 text-center text-pink-500 dark:text-pink-300">
+              <SvgIcon icon="ri:bubble-chart-fill" class="mr-2 text-3xl" />
+              <span>ask everything~</span>
+            </div>
+          </template>
+          <template v-else>
             <div>
               <Message
                 v-for="(item, index) of dataSources"
@@ -519,7 +525,7 @@ onUnmounted(() => {
             </span>
           </HoverButton>
           <HoverButton v-if="!isMobile" @click="toggleUsingContext">
-            <span class="text-xl" :class="{ 'text-pink-500': usingContext, 'text-red-500': !usingContext }">
+            <span class="text-xl" :class="{ 'text-green-500': usingContext, 'text-red-500': !usingContext }">
               <SvgIcon icon="ri:chat-history-line" />
             </span>
           </HoverButton>
